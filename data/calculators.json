@@ -1,0 +1,1806 @@
+[
+{
+"id": "claude-vs-openai-api-cost-calculator",
+"title": "Bulk article API cost: Claude vs OpenAI vs DeepSeek",
+"note": "Rates per 1M tokens (input/output) checked November 2026: Claude Sonnet 5.5 $2/$10, OpenAI GPT-6.1 Sol $2/$10, GPT-4o (older model) $2.50/$10, DeepSeek V4.1 Flash $0.30/$1.20 at peak (half price off-peak). Assumes 1,500 prompt tokens per article and about 1.33 tokens per word; tokenizers differ. Batch processing (50% off at the major providers) and prompt caching lower real bills.",
+"cta": {
+"text": "Compare API wrappers",
+"url": "/calculators/"
+},
+"inputs": [
+{
+"id": "articles",
+"label": "Articles per month",
+"min": 10,
+"max": 5000,
+"step": 10,
+"value": 200,
+"unit": "articles"
+},
+{
+"id": "words",
+"label": "Words per article",
+"min": 300,
+"max": 4000,
+"step": 100,
+"value": 1500,
+"unit": "words"
+}
+],
+"options": [
+{
+"name": "Claude Sonnet 5.5",
+"terms": [
+[
+1.333e-05,
+"articles",
+"words"
+],
+[
+0.003,
+"articles"
+]
+]
+},
+{
+"name": "OpenAI GPT-6.1 Sol",
+"terms": [
+[
+1.333e-05,
+"articles",
+"words"
+],
+[
+0.003,
+"articles"
+]
+]
+},
+{
+"name": "OpenAI GPT-4o (older)",
+"terms": [
+[
+1.333e-05,
+"articles",
+"words"
+],
+[
+0.00375,
+"articles"
+]
+]
+},
+{
+"name": "DeepSeek V4.1 Flash (peak)",
+"terms": [
+[
+1.6e-06,
+"articles",
+"words"
+],
+[
+0.00045,
+"articles"
+]
+]
+}
+]
+},
+{
+"id": "make-vs-zapier-pricing-calculator",
+"title": "Make vs Zapier cost by workflow volume",
+"note": "Entry tiers checked November 2026 on annual billing: Make Core $9 for 10,000 credits; Zapier Professional $19.99 for 750 tasks and $49 for 2,000. Higher tiers are approximations because published ladders differ between sources, and monthly billing costs more on both. Both count each step; Zapier does not count the trigger, so Zapier may be overstated.",
+"cta": {
+"text": "See Make pricing",
+"url": "/vs/"
+},
+"inputs": [
+{
+"id": "runs",
+"label": "Workflow runs per month",
+"min": 500,
+"max": 50000,
+"step": 500,
+"value": 5000,
+"unit": "runs"
+},
+{
+"id": "steps",
+"label": "Steps per workflow",
+"min": 1,
+"max": 10,
+"step": 1,
+"value": 4,
+"unit": "steps"
+}
+],
+"options": [
+{
+"name": "Make",
+"tier": {
+"in": [
+"runs",
+"steps"
+],
+"steps": [
+[
+10000,
+9
+],
+[
+20000,
+16
+],
+[
+40000,
+29
+],
+[
+80000,
+55
+],
+[
+150000,
+99
+]
+],
+"over": 0.0007
+}
+},
+{
+"name": "Zapier",
+"tier": {
+"in": [
+"runs",
+"steps"
+],
+"steps": [
+[
+750,
+19.99
+],
+[
+2000,
+49
+]
+],
+"over": 0.01
+}
+}
+]
+},
+{
+"id": "n8n-self-hosted-vs-cloud-cost-calculator",
+"title": "n8n self-hosted VPS vs n8n Cloud",
+"note": "n8n Cloud Starter is 24 euros a month billed monthly (20 annual) for 2,500 executions, Pro 60 (50 annual) for 10,000, and Business about 800 for 40,000 (sources differ). n8n bills in euros; figures are shown as dollars for simplicity. Self-hosted uses Hostinger KVM 2 at its $14.99 renewal rate (introductory $8.99) plus your time at $25 per hour, which is an assumption.",
+"cta": {
+"text": "See hosting options",
+"url": "/calculators/"
+},
+"inputs": [
+{
+"id": "runs",
+"label": "Executions per month",
+"min": 1000,
+"max": 40000,
+"step": 1000,
+"value": 10000,
+"unit": "runs"
+},
+{
+"id": "hours",
+"label": "Your upkeep hours per month",
+"min": 0,
+"max": 10,
+"step": 1,
+"value": 1,
+"unit": "hours"
+}
+],
+"options": [
+{
+"name": "n8n Cloud",
+"tier": {
+"in": [
+"runs"
+],
+"steps": [
+[
+2500,
+24
+],
+[
+10000,
+60
+],
+[
+40000,
+800
+]
+],
+"over": 0.02
+}
+},
+{
+"name": "Self-hosted VPS (Hostinger KVM 2)",
+"fixed": 14.99,
+"terms": [
+[
+25,
+"hours"
+]
+]
+}
+]
+},
+{
+"id": "ai-voice-agent-cost-per-minute-calculator",
+"title": "AI voice agent cost per minute",
+"note": "All-in per-minute estimates from published 2026 rates: Vapi has a $0.05 platform fee plus pass-through providers (typical all-in $0.13 to $0.30; $0.15 used), Retell about $0.115 (estimator: LLM $0.045, voice infrastructure $0.055, text-to-speech $0.015), Bland about $0.14. Phone charges are extra on most platforms.",
+"cta": {
+"text": "Compare voice platforms",
+"url": "/calculators/"
+},
+"inputs": [
+{
+"id": "minutes",
+"label": "Call minutes per month",
+"min": 100,
+"max": 50000,
+"step": 100,
+"value": 2000,
+"unit": "min"
+}
+],
+"options": [
+{
+"name": "Vapi (typical stack)",
+"terms": [
+[
+0.15,
+"minutes"
+]
+]
+},
+{
+"name": "Bland",
+"terms": [
+[
+0.14,
+"minutes"
+]
+]
+},
+{
+"name": "Retell",
+"terms": [
+[
+0.115,
+"minutes"
+]
+]
+}
+]
+},
+{
+"id": "cursor-vs-windsurf-vs-copilot-pricing-calculator",
+"title": "AI coding editor monthly cost with extra usage",
+"note": "Seat prices checked November 2026: Cursor Pro $20, Windsurf Pro $20 (older Pro plans were $15), GitHub Copilot Pro $10 and Business $19. Copilot moved to usage-based AI credits on June 1, 2026 (1 credit = $0.01), so extra usage is modelled as dollars per seat for every tool. Team plans cost more (Cursor Teams $40 per seat).",
+"inputs": [
+{
+"id": "seats",
+"label": "Developer seats",
+"min": 1,
+"max": 50,
+"step": 1,
+"value": 3,
+"unit": "seats"
+},
+{
+"id": "extra",
+"label": "Extra usage beyond included credits ($ per seat)",
+"min": 0,
+"max": 100,
+"step": 5,
+"value": 10,
+"unit": "$"
+}
+],
+"options": [
+{
+"name": "Cursor Pro",
+"terms": [
+[
+20,
+"seats"
+],
+[
+1,
+"seats",
+"extra"
+]
+]
+},
+{
+"name": "Windsurf Pro",
+"terms": [
+[
+20,
+"seats"
+],
+[
+1,
+"seats",
+"extra"
+]
+]
+},
+{
+"name": "GitHub Copilot Pro",
+"terms": [
+[
+10,
+"seats"
+],
+[
+1,
+"seats",
+"extra"
+]
+]
+},
+{
+"name": "GitHub Copilot Business",
+"terms": [
+[
+19,
+"seats"
+],
+[
+1,
+"seats",
+"extra"
+]
+]
+}
+]
+},
+{
+"id": "faceless-youtube-ai-tool-stack-cost-calculator",
+"title": "Faceless YouTube channel: AI stack vs freelancers",
+"note": "Claude Pro $20 and ElevenLabs Creator $22 (about 2 hours of audio) or Pro $99 are published prices checked November 2026. The video editing tool cost, the per-minute rendering cost and the freelancer rate of $6 per finished minute are assumptions; replace them with your own.",
+"inputs": [
+{
+"id": "videos",
+"label": "Videos per month",
+"min": 1,
+"max": 60,
+"step": 1,
+"value": 12,
+"unit": "videos"
+},
+{
+"id": "minutes",
+"label": "Minutes per video",
+"min": 1,
+"max": 20,
+"step": 1,
+"value": 8,
+"unit": "min"
+}
+],
+"options": [
+{
+"name": "Budget AI stack",
+"fixed": 62,
+"terms": [
+[
+0.05,
+"videos",
+"minutes"
+]
+]
+},
+{
+"name": "Premium AI stack",
+"fixed": 179,
+"terms": [
+[
+0.2,
+"videos",
+"minutes"
+]
+]
+},
+{
+"name": "Freelancers",
+"terms": [
+[
+6,
+"videos",
+"minutes"
+]
+]
+}
+]
+},
+{
+"id": "rag-vector-database-cost-estimator",
+"title": "Knowledge base storage and query cost",
+"note": "Pinecone Standard has a $50 monthly minimum, then $0.33 per GB of storage and $16 to $18 per million read units (Pinecone pricing, checked October 2026). The calculator assumes about 6 KB per 1,536-dimension chunk and about 10 read units per query, so real read units depend on index size. Supabase Pro is $25 a month with 8 GB of database and a $10 compute credit, extra disk at $0.125 per GB, and no per-query charge, assuming the included Micro compute is enough. Self-hosted uses Hostinger KVM 2 at its $14.99 renewal rate. Reported Pinecone bills often exceed early estimates.",
+"inputs": [
+{
+"id": "docs",
+"label": "Document chunks stored",
+"min": 1000,
+"max": 1000000,
+"step": 1000,
+"value": 50000,
+"unit": "chunks"
+},
+{
+"id": "queries",
+"label": "Queries per month",
+"min": 1000,
+"max": 1000000,
+"step": 1000,
+"value": 50000,
+"unit": "queries"
+}
+],
+"options": [
+{
+"name": "Pinecone Standard",
+"min": 50,
+"terms": [
+[
+1.98e-06,
+"docs"
+],
+[
+0.00016,
+"queries"
+]
+]
+},
+{
+"name": "Supabase Pro + pgvector",
+"fixed": 25,
+"extra": [
+{
+"in": "docs",
+"free": 1333333,
+"rate": 7.5e-07
+}
+]
+},
+{
+"name": "Self-hosted pgvector (Hostinger KVM 2)",
+"fixed": 14.99
+}
+]
+},
+{
+"id": "otterly-ai-vs-peec-ai-vs-profound-pricing",
+"title": "Cost to track brand prompts in AI engines",
+"note": "Otterly Lite $29 (15 prompts), Standard $189 (100), Premium $489 (400), extra 100 prompts $99; Peec Starter $95 (50 prompts), Pro $245 (150), Advanced $495 (350). Checked October to November 2026, billed monthly. Beyond the top published tier the calculator uses each vendor's add-on or top-tier cost per prompt. Profound ($99, ChatGPT only) is not modelled. Engine add-ons and annual discounts change totals.",
+"inputs": [
+{
+"id": "prompts",
+"label": "Prompts tracked",
+"min": 25,
+"max": 1000,
+"step": 25,
+"value": 100,
+"unit": "prompts"
+}
+],
+"options": [
+{
+"name": "Otterly.ai",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+15,
+29
+],
+[
+100,
+189
+],
+[
+400,
+489
+]
+],
+"over": 0.99
+}
+},
+{
+"name": "Peec AI",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+50,
+95
+],
+[
+150,
+245
+],
+[
+350,
+495
+]
+],
+"over": 1.41
+}
+}
+]
+},
+{
+"id": "rankscale-ai-vs-se-ranking-ai-overview-tracker",
+"title": "AI visibility tracker cost over a test period",
+"note": "Monthly prices checked November 2026: Rankscale Pro $99, Pro+ $229 (Growth $385); SE Ranking Core $129 plus the $89 AI Search add-on ($218; sources differ, and an annual add-on price of $71.20 is also listed); SE Visible Basic $79. Allowances differ by plan, so this compares plan prices over time, not cost per prompt. Rankscale listed a 20-euro entry plan earlier in 2026, which may no longer exist.",
+"inputs": [
+{
+"id": "months",
+"label": "Months you will run the tracker",
+"min": 1,
+"max": 24,
+"step": 1,
+"value": 6,
+"unit": "months"
+}
+],
+"options": [
+{
+"name": "Rankscale Pro",
+"terms": [
+[
+99,
+"months"
+]
+]
+},
+{
+"name": "Rankscale Pro+",
+"terms": [
+[
+229,
+"months"
+]
+]
+},
+{
+"name": "SE Ranking Core + AI Search",
+"terms": [
+[
+218,
+"months"
+]
+]
+},
+{
+"name": "SE Visible Basic",
+"terms": [
+[
+79,
+"months"
+]
+]
+}
+],
+"unit": "test period"
+},
+{
+"id": "airops-pricing-calculator",
+"title": "AirOps tasks vs freelance writers",
+"note": "AirOps lists a free plan with 1,000 tasks a month, paid plans from $49 a month, and extra tasks at $9 per 1,000 on Pro ($6 on Team), per 2026 third-party reviews with moderate confidence; the task allowance of the $49 plan is assumed to be 1,000 and AirOps otherwise quotes custom pricing. Tasks per article depend on your workflow. The $40 freelance rate per article is an assumption.",
+"inputs": [
+{
+"id": "articles",
+"label": "Articles per month",
+"min": 10,
+"max": 1000,
+"step": 10,
+"value": 100,
+"unit": "articles"
+},
+{
+"id": "credits",
+"label": "AirOps tasks per article",
+"min": 1,
+"max": 100,
+"step": 1,
+"value": 20,
+"unit": "tasks"
+}
+],
+"options": [
+{
+"name": "AirOps (from $49 plus extra tasks)",
+"tier": {
+"in": [
+"articles",
+"credits"
+],
+"steps": [
+[
+1000,
+49
+]
+],
+"over": 0.009
+}
+},
+{
+"name": "Freelance writer",
+"terms": [
+[
+40,
+"articles"
+]
+]
+}
+]
+},
+{
+"id": "aiclicks-vs-indexly",
+"title": "AI visibility and indexing platform cost by team seats",
+"note": "AIclicks Starter $59 a month (choose 3 of 11 AI engines) with $189 and $499 tiers, observed May 2026; older directories list legacy prices of $39 and $79. Indexly now prices per user: Starter $99 (technical SEO indexing tools plus ChatGPT tracking of 50 prompts) and Growth $299, with a 17% annual discount, read May 2026; older directories still list indexing-only plans from $14 to $59. The sources found do not list AIclicks prompt allowances per tier, so the tiers are compared by price. Check each vendor's live page.",
+"inputs": [
+{
+"id": "seats",
+"label": "Team seats",
+"min": 1,
+"max": 10,
+"step": 1,
+"value": 2,
+"unit": "seats"
+}
+],
+"options": [
+{
+"name": "AIclicks Starter (flat)",
+"fixed": 59
+},
+{
+"name": "AIclicks mid tier (flat)",
+"fixed": 189
+},
+{
+"name": "Indexly Starter",
+"terms": [
+[
+99,
+"seats"
+]
+]
+},
+{
+"name": "Indexly Growth",
+"terms": [
+[
+299,
+"seats"
+]
+]
+}
+]
+},
+{
+"id": "surfer-seo-vs-frase-vs-scalenut",
+"title": "SEO content optimization cost by monthly articles",
+"note": "Surfer Essential $99 for 30 articles and Scale $219 for 100 (monthly billing; annual is about 20% less), with about $4 per extra article (one source). Frase Solo $15 (about 4 articles), Basic $45 (about 30 articles) and Team $115 (3 users, unlimited); the article limits come from third-party reviews. Scalenut's current Starter ($59), Plus ($89) and Professional ($199) plans cover GEO articles and prompt tracking rather than a fixed article count, so they are listed in the table but not modelled. USD only.",
+"inputs": [
+{
+"id": "articles",
+"label": "Articles optimized per month",
+"min": 1,
+"max": 100,
+"step": 1,
+"value": 30,
+"unit": "articles"
+}
+],
+"options": [
+{
+"name": "Surfer SEO",
+"tier": {
+"in": [
+"articles"
+],
+"steps": [
+[
+30,
+99
+],
+[
+100,
+219
+]
+],
+"over": 4
+}
+},
+{
+"name": "Frase",
+"tier": {
+"in": [
+"articles"
+],
+"steps": [
+[
+4,
+15
+],
+[
+30,
+45
+],
+[
+1000,
+115
+]
+],
+"over": 0
+}
+}
+]
+},
+{
+"id": "writesonic-vs-airops",
+"title": "Bulk content: Writesonic plans vs AirOps tasks",
+"note": "Writesonic monthly prices checked August to November 2026: Starter $99 (15 AI articles), Basic $249 (25), Growth $499 (50); annual billing is about 20% lower; above 50 articles the calculator extends Growth at about $10 per article (Enterprise is custom). AirOps from $49 plus about $9 per 1,000 extra tasks (moderate confidence; the allowance of the $49 plan is assumed to be 1,000 tasks). The two tools do different jobs, so this compares tool fees only and excludes editing time.",
+"inputs": [
+{
+"id": "articles",
+"label": "Articles per month",
+"min": 10,
+"max": 200,
+"step": 5,
+"value": 25,
+"unit": "articles"
+},
+{
+"id": "credits",
+"label": "AirOps tasks per article",
+"min": 1,
+"max": 100,
+"step": 1,
+"value": 20,
+"unit": "tasks"
+}
+],
+"options": [
+{
+"name": "Writesonic",
+"tier": {
+"in": [
+"articles"
+],
+"steps": [
+[
+15,
+99
+],
+[
+25,
+249
+],
+[
+50,
+499
+]
+],
+"over": 10
+}
+},
+{
+"name": "AirOps",
+"tier": {
+"in": [
+"articles",
+"credits"
+],
+"steps": [
+[
+1000,
+49
+]
+],
+"over": 0.009
+}
+}
+]
+},
+{
+"id": "gamma-vs-beautiful-ai-vs-tome-pricing",
+"title": "AI presentation tool cost by team size",
+"note": "Per-seat prices billed annually, checked September to October 2026: Gamma Plus $9 and Pro $18; Beautiful.ai Team $40 (2 to 20 seats; $50 billed monthly); Canva Pro $144 a year per person (about $12 a month, or $18 billed monthly) and Canva Business $250 a year per person. Canva shares a monthly pool of AI credits across its Magic Studio tools (500 on Pro), Gamma Plus includes 1,000 credits and Pro 4,000, and Beautiful.ai includes unlimited AI generation. Tome shut down its presentation product on April 30, 2025 and is not included.",
+"inputs": [
+{
+"id": "seats",
+"label": "Team seats",
+"min": 2,
+"max": 20,
+"step": 1,
+"value": 5,
+"unit": "seats"
+}
+],
+"options": [
+{
+"name": "Gamma Plus",
+"terms": [
+[
+9,
+"seats"
+]
+]
+},
+{
+"name": "Gamma Pro",
+"terms": [
+[
+18,
+"seats"
+]
+]
+},
+{
+"name": "Beautiful.ai Team",
+"terms": [
+[
+40,
+"seats"
+]
+]
+},
+{
+"name": "Canva Pro",
+"terms": [
+[
+12,
+"seats"
+]
+]
+}
+]
+},
+{
+"id": "heygen-vs-synthesia-vs-argil-cost-per-minute",
+"title": "AI avatar video cost by minutes produced",
+"note": "HeyGen Creator $29 monthly (600 credits, about 19 minutes of Avatar IV video; about $1.50 per extra minute at that rate). Synthesia Starter $19 monthly (about 22 minutes) and Pro $89 (about 114 minutes, derived from published credit rates). Argil Classic $39 (about 25 minutes), Pro $149 (about 100) and Scale $499 (about 300), per Argil's plan documentation; extra minutes beyond Scale use its per-minute rate. Credit systems differ by avatar engine, so compare minutes on the engine you will use. HeyGen's allowance differs between sources.",
+"inputs": [
+{
+"id": "minutes",
+"label": "Video minutes per month",
+"min": 1,
+"max": 300,
+"step": 1,
+"value": 30,
+"unit": "min"
+}
+],
+"options": [
+{
+"name": "HeyGen Creator",
+"tier": {
+"in": [
+"minutes"
+],
+"steps": [
+[
+19,
+29
+]
+],
+"over": 1.5
+}
+},
+{
+"name": "Synthesia",
+"tier": {
+"in": [
+"minutes"
+],
+"steps": [
+[
+22,
+19
+],
+[
+114,
+89
+]
+],
+"over": 0.78
+}
+},
+{
+"name": "Argil",
+"tier": {
+"in": [
+"minutes"
+],
+"steps": [
+[
+25,
+39
+],
+[
+100,
+149
+],
+[
+300,
+499
+]
+],
+"over": 1.66
+}
+}
+]
+},
+{
+"id": "clay-vs-apollo-credit-cost-calculator",
+"title": "Lead enrichment credit cost",
+"note": "Clay Launch $185 per month (about 2,500 Data Credits; top-up credits cost 50% above the plan rate, about $0.11 each). Apollo Basic $49 per user (about 2,500 credits a month) and Professional $79 (about 4,000), annual billing; the price of extra Apollo credits is an assumption at the Professional plan rate. Credits per lead depend on your workflow (on Apollo an email is 1 credit and a phone number 8).",
+"inputs": [
+{
+"id": "leads",
+"label": "Leads enriched per month",
+"min": 100,
+"max": 50000,
+"step": 100,
+"value": 1000,
+"unit": "leads"
+},
+{
+"id": "credits",
+"label": "Credits per lead",
+"min": 1,
+"max": 10,
+"step": 1,
+"value": 2,
+"unit": "credits"
+}
+],
+"options": [
+{
+"name": "Clay Launch",
+"tier": {
+"in": [
+"leads",
+"credits"
+],
+"steps": [
+[
+2500,
+185
+]
+],
+"over": 0.111
+}
+},
+{
+"name": "Apollo",
+"tier": {
+"in": [
+"leads",
+"credits"
+],
+"steps": [
+[
+2500,
+49
+],
+[
+4000,
+79
+]
+],
+"over": 0.02
+}
+}
+]
+},
+{
+"id": "elevenlabs-vs-play-ht-vs-cartesia",
+"title": "Voice generation cost by audio hours",
+"note": "ElevenLabs Creator $22 (about 2 hours of audio), Pro $99 (about 11 hours) and Scale $299 (about 33 hours); overage about $0.18 per 1,000 characters on Pro (sources differ). Cartesia Pro $5 (about 1.9 hours), Startup $49 (about 23 hours) and Scale $299 (about 148 hours), at one credit per character. Fish Audio's pay-as-you-go API charges $15 per million UTF-8 bytes for its S2 Pro model, and OpenAI's gpt-4o-mini-tts is about $0.015 per minute of audio. One audio hour is about 54,000 characters (sources range from 45,000 to 83,000). Prices checked July to November 2026. Play.ht was reported shut down on December 31, 2025.",
+"inputs": [
+{
+"id": "hours",
+"label": "Audio hours per month",
+"min": 1,
+"max": 100,
+"step": 1,
+"value": 10,
+"unit": "hours"
+}
+],
+"options": [
+{
+"name": "ElevenLabs (plans)",
+"tier": {
+"in": [
+"hours"
+],
+"steps": [
+[
+2.2,
+22
+],
+[
+11.1,
+99
+],
+[
+33.3,
+299
+]
+],
+"over": 9.72
+}
+},
+{
+"name": "Cartesia (plans)",
+"tier": {
+"in": [
+"hours"
+],
+"steps": [
+[
+1.9,
+5
+],
+[
+23.1,
+49
+],
+[
+148,
+299
+]
+],
+"over": 2
+}
+},
+{
+"name": "Fish Audio API (S2 Pro)",
+"terms": [
+[
+0.81,
+"hours"
+]
+]
+},
+{
+"name": "OpenAI gpt-4o-mini-tts API",
+"terms": [
+[
+0.9,
+"hours"
+]
+]
+}
+]
+},
+{
+"id": "replit-agent-vs-bolt-vs-lovable",
+"title": "No-code app builder cost by prompts per month",
+"note": "Plan prices checked November 2026: Replit Core $20 (includes $20 of usage credits), Lovable Pro $25 (100 credits), Bolt Pro $25 (10M tokens). The cost per build prompt is an assumption because each tool meters differently: about $0.30 per Replit checkpoint, 1 Lovable credit, and 50,000 Bolt tokens. Overage rates for Lovable and Bolt are assumptions.",
+"inputs": [
+{
+"id": "prompts",
+"label": "Build prompts per month",
+"min": 50,
+"max": 1000,
+"step": 10,
+"value": 200,
+"unit": "prompts"
+}
+],
+"options": [
+{
+"name": "Replit Core",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+66,
+20
+]
+],
+"over": 0.3
+}
+},
+{
+"name": "Lovable Pro",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+100,
+25
+]
+],
+"over": 0.25
+}
+},
+{
+"name": "Bolt Pro",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+200,
+25
+]
+],
+"over": 0.125
+}
+}
+]
+},
+{
+"id": "real-estate-lead-qualification-whatsapp",
+"title": "Real estate lead response: manual vs AI workflow",
+"note": "WhatsApp list rates for India checked 2026: marketing template about 0.86 rupees ($0.011), utility and authentication about 0.115 rupees ($0.0014); since October 1, 2026 Meta also charges service replies at the utility rate after 1,000 free per business number each month. Business solution provider fees and GST are extra. The $0.045 per lead assumes one marketing template plus five replies (about $0.018 of Meta fees) and about $0.027 of model usage (six exchanges on Claude Sonnet 5.5), plus a $9 Make Core plan. Staff time is an assumption you enter.",
+"inputs": [
+{
+"id": "leads",
+"label": "New leads per month",
+"min": 20,
+"max": 2000,
+"step": 10,
+"value": 200,
+"unit": "leads"
+},
+{
+"id": "minutes",
+"label": "Manual minutes per lead",
+"min": 1,
+"max": 30,
+"step": 1,
+"value": 8,
+"unit": "min"
+},
+{
+"id": "hourly",
+"label": "Staff cost per hour ($)",
+"min": 2,
+"max": 60,
+"step": 1,
+"value": 8,
+"unit": "$"
+}
+],
+"options": [
+{
+"name": "Manual follow-up",
+"terms": [
+[
+0.0166667,
+"leads",
+"minutes",
+"hourly"
+]
+]
+},
+{
+"name": "AI WhatsApp workflow",
+"fixed": 9,
+"terms": [
+[
+0.045,
+"leads"
+]
+]
+}
+]
+},
+{
+"id": "pdf-invoice-extraction-to-excel",
+"title": "Invoice data entry: manual vs automated",
+"note": "Staff time is an assumption you enter. The automated workflow is a $9 Make Core plan plus about $0.01 per invoice of model usage (about 2,000 input and 500 output tokens at $2/$10 per 1M). Error rates and review time are not included.",
+"inputs": [
+{
+"id": "invoices",
+"label": "Invoices per month",
+"min": 20,
+"max": 5000,
+"step": 10,
+"value": 300,
+"unit": "invoices"
+},
+{
+"id": "minutes",
+"label": "Manual minutes per invoice",
+"min": 1,
+"max": 20,
+"step": 1,
+"value": 5,
+"unit": "min"
+},
+{
+"id": "hourly",
+"label": "Staff cost per hour ($)",
+"min": 2,
+"max": 60,
+"step": 1,
+"value": 10,
+"unit": "$"
+}
+],
+"options": [
+{
+"name": "Manual entry",
+"terms": [
+[
+0.0166667,
+"invoices",
+"minutes",
+"hourly"
+]
+]
+},
+{
+"name": "AI extraction workflow",
+"fixed": 9,
+"terms": [
+[
+0.01,
+"invoices"
+]
+]
+}
+]
+},
+{
+"id": "ai-architectural-rendering-villa-plots",
+"title": "Architectural renders: AI workflow vs traditional 3D studio",
+"note": "AI workflow: Midjourney Standard $30 a month (15 fast GPU hours, about 900 images, extra fast time $4 an hour) plus Magnific Premium $20 a month (20,000 credits, about 222 Precision 2K upscales at 90 credits each, extra credits about $1 per 1,000), checked October to November 2026. It assumes about 10 generations per final render. Traditional studio: a published starting price of $300 for a residential exterior still (ArchiCGI, October 2026); studios charge from about $300 to $2,800 per image.",
+"inputs": [
+{
+"id": "renders",
+"label": "Renders per month",
+"min": 1,
+"max": 100,
+"step": 1,
+"value": 10,
+"unit": "renders"
+}
+],
+"options": [
+{
+"name": "Midjourney Standard + Magnific Premium",
+"fixed": 50,
+"tier": {
+"in": [
+"renders"
+],
+"steps": [
+[
+90,
+0
+]
+],
+"over": 0.6667
+},
+"extra": [
+{
+"in": "renders",
+"free": 222,
+"rate": 0.09
+}
+]
+},
+{
+"name": "Traditional 3D studio (from $300 a still)",
+"terms": [
+[
+300,
+"renders"
+]
+]
+}
+]
+},
+{
+"id": "youtube-shorts-to-blog-post",
+"title": "Repurposing Shorts into blog posts: manual vs automated",
+"note": "Your time is an assumption you enter. The automated workflow is a $9 Make Core plan plus about $0.03 per post of model usage (about 2,000 tokens in and 2,000 out at $2/$10 per 1M). Editing time is not included.",
+"inputs": [
+{
+"id": "posts",
+"label": "Posts per month",
+"min": 4,
+"max": 300,
+"step": 2,
+"value": 30,
+"unit": "posts"
+},
+{
+"id": "minutes",
+"label": "Manual minutes per post",
+"min": 5,
+"max": 120,
+"step": 5,
+"value": 45,
+"unit": "min"
+},
+{
+"id": "hourly",
+"label": "Your hourly value ($)",
+"min": 2,
+"max": 100,
+"step": 1,
+"value": 15,
+"unit": "$"
+}
+],
+"options": [
+{
+"name": "Manual writing",
+"terms": [
+[
+0.0166667,
+"posts",
+"minutes",
+"hourly"
+]
+]
+},
+{
+"name": "Automated workflow",
+"fixed": 9,
+"terms": [
+[
+0.03,
+"posts"
+]
+]
+}
+]
+},
+{
+"id": "ai-customer-support-chatbot-shopify",
+"title": "Support cost: human only vs AI agent",
+"note": "Intercom's Fin AI Agent is priced at $0.99 per resolved conversation with a 50-resolution monthly minimum (published rate checked November 2026). The $4 cost per human-handled ticket is an assumption; enter your own.",
+"inputs": [
+{
+"id": "human",
+"label": "Tickets per month that need a human",
+"min": 0,
+"max": 5000,
+"step": 50,
+"value": 300,
+"unit": "tickets"
+},
+{
+"id": "bot",
+"label": "Tickets per month an AI agent could resolve",
+"min": 0,
+"max": 5000,
+"step": 50,
+"value": 500,
+"unit": "tickets"
+}
+],
+"options": [
+{
+"name": "Human team only",
+"terms": [
+[
+4,
+"human"
+],
+[
+4,
+"bot"
+]
+]
+},
+{
+"name": "AI agent plus humans",
+"terms": [
+[
+4,
+"human"
+]
+],
+"tier": {
+"in": [
+"bot"
+],
+"steps": [
+[
+50,
+49.5
+]
+],
+"over": 0.99
+}
+}
+]
+},
+{
+"id": "best-ai-search-visibility-trackers",
+"title": "GEO tracker cost by monitored prompts and engines",
+"note": "Otterly Lite $29 (15 prompts), Standard $189 (100), Premium $489 (400), with engine add-ons of about $9 each beyond four. Peec Starter $95 (50), Pro $245 (150), Advanced $495 (350); each engine beyond three costs $30 or more (the calculator uses $30). SE Ranking Core $129 plus the $89 AI Search add-on ($218) is assumed to cover 200 prompts and five engines; SE Ranking does not publish prompts for the add-on and sources differ. Beyond top tiers the calculator uses each plan's cost per prompt. Billed monthly, checked October to November 2026.",
+"inputs": [
+{
+"id": "prompts",
+"label": "Prompts tracked",
+"min": 50,
+"max": 1000,
+"step": 50,
+"value": 100,
+"unit": "prompts"
+},
+{
+"id": "engines",
+"label": "AI engines monitored",
+"min": 1,
+"max": 5,
+"step": 1,
+"value": 3,
+"unit": "engines"
+}
+],
+"options": [
+{
+"name": "Otterly.ai",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+15,
+29
+],
+[
+100,
+189
+],
+[
+400,
+489
+]
+],
+"over": 0.99
+},
+"extra": [
+{
+"in": "engines",
+"free": 4,
+"rate": 9
+}
+]
+},
+{
+"name": "Peec AI",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+50,
+95
+],
+[
+150,
+245
+],
+[
+350,
+495
+]
+],
+"over": 1.41
+},
+"extra": [
+{
+"in": "engines",
+"free": 3,
+"rate": 30
+}
+]
+},
+{
+"name": "SE Ranking AI Search",
+"tier": {
+"in": [
+"prompts"
+],
+"steps": [
+[
+200,
+218
+]
+],
+"over": 1.09
+}
+}
+]
+},
+{
+"id": "perplexity-pro-vs-claude-pro-vs-chatgpt-plus",
+"title": "Team AI research stack cost and API breakeven",
+"note": "ChatGPT Business and Claude Team standard seats are $25 billed monthly ($20 annual) with a 2-seat minimum; Perplexity Enterprise Pro is about $40 per seat (checked November 2026). The pay-as-you-go option uses Perplexity's Search API at $5 per 1,000 requests plus Claude Sonnet 5.5 at $2/$10 per 1M tokens to write answers (assumes 3,000 input and 500 output tokens per search) over 22 working days. Subscriptions include apps and usage limits that an API stack does not.",
+"inputs": [
+{
+"id": "seats",
+"label": "Team seats",
+"min": 1,
+"max": 25,
+"step": 1,
+"value": 5,
+"unit": "seats"
+},
+{
+"id": "searches_per_day",
+"label": "Searches per person per day",
+"min": 10,
+"max": 200,
+"step": 10,
+"value": 40,
+"unit": "searches"
+}
+],
+"options": [
+{
+"name": "ChatGPT Business",
+"terms": [
+[
+25,
+"seats"
+]
+]
+},
+{
+"name": "Claude Team (standard seat)",
+"terms": [
+[
+25,
+"seats"
+]
+]
+},
+{
+"name": "Perplexity Enterprise Pro",
+"terms": [
+[
+40,
+"seats"
+]
+]
+},
+{
+"name": "Search API + Claude (pay as you go)",
+"terms": [
+[
+0.352,
+"seats",
+"searches_per_day"
+]
+]
+}
+]
+},
+{
+"id": "no-code-ai-calculator-builder",
+"title": "Custom SEO calculator build cost: AI workflow vs developer",
+"unit": "project",
+"note": "Claude Pro $20, Calconic Regular $17 per month (its free plan allows 5 calculators) and Outgrow from about $14 to $95 per month are published prices checked in 2026. Time per calculator, your hourly value ($20) and the freelance developer rate ($40 per hour) are assumptions; replace them with your own. The no-code builder option uses Calconic.",
+"inputs": [
+{
+"id": "calculators_built",
+"label": "Calculators to build",
+"min": 1,
+"max": 30,
+"step": 1,
+"value": 8,
+"unit": "calculators"
+},
+{
+"id": "revisions_per_tool",
+"label": "Revisions per calculator",
+"min": 1,
+"max": 10,
+"step": 1,
+"value": 3,
+"unit": "revisions"
+}
+],
+"options": [
+{
+"name": "Claude Pro + static hosting",
+"fixed": 20,
+"terms": [
+[
+30,
+"calculators_built"
+],
+[
+5,
+"calculators_built",
+"revisions_per_tool"
+]
+]
+},
+{
+"name": "No-code builder (Calconic)",
+"fixed": 17,
+"terms": [
+[
+15,
+"calculators_built"
+],
+[
+3,
+"calculators_built",
+"revisions_per_tool"
+]
+]
+},
+{
+"name": "Freelance JS developer",
+"terms": [
+[
+80,
+"calculators_built"
+],
+[
+20,
+"calculators_built",
+"revisions_per_tool"
+]
+]
+}
+]
+},
+{
+"id": "best-browser-ai-extensions",
+"title": "Solopreneur browser AI stack cost estimator",
+"note": "Monica Pro $99 a year (about $8.30 a month) and HARPA AI Individual $12 a month billed annually; Perplexity Pro and Claude Pro are $20 a month each (checked 2026). The free option is a built-in browser assistant with feature and usage limits. The cost per hour saved uses the hours you enter and 4.33 weeks a month.",
+"perHour": {
+"in": "hours_saved_weekly",
+"weeks": 4.33,
+"perSeat": "seats"
+},
+"inputs": [
+{
+"id": "seats",
+"label": "Seats",
+"min": 1,
+"max": 10,
+"step": 1,
+"value": 2,
+"unit": "seats"
+},
+{
+"id": "hours_saved_weekly",
+"label": "Hours saved per person per week",
+"min": 1,
+"max": 20,
+"step": 1,
+"value": 5,
+"unit": "hours"
+}
+],
+"options": [
+{
+"name": "Monica Pro + HARPA AI",
+"terms": [
+[
+20.3,
+"seats"
+]
+]
+},
+{
+"name": "Perplexity Pro + Claude Pro",
+"terms": [
+[
+40,
+"seats"
+]
+]
+},
+{
+"name": "Free built-in browser assistant",
+"terms": [
+[
+0,
+"seats"
+]
+]
+}
+]
+},
+{
+"id": "programmatic-seo-directory-claude-artifacts",
+"title": "Programmatic SEO traffic, AdSense and affiliate forecaster",
+"note": "These are assumptions, not a forecast. AdSense assumes a $10 RPM (earnings per 1,000 visits) and affiliate value assumes 2% of visitors click, 2% of those buy, and $18 of commission in the first month. Overhead assumes $15 of hosting plus $0.10 per page a month. Real RPM, click rates and conversion vary widely, so change these in Lab Settings.",
+"net": {
+"plus": [
+0,
+1
+],
+"minus": [
+2
+]
+},
+"inputs": [
+{
+"id": "published_pages",
+"label": "Published pages",
+"min": 10,
+"max": 200,
+"step": 10,
+"value": 50,
+"unit": "pages"
+},
+{
+"id": "monthly_visits_per_page",
+"label": "Monthly visits per page",
+"min": 100,
+"max": 2000,
+"step": 100,
+"value": 500,
+"unit": "visits"
+}
+],
+"options": [
+{
+"name": "Estimated AdSense revenue",
+"terms": [
+[
+0.01,
+"published_pages",
+"monthly_visits_per_page"
+]
+]
+},
+{
+"name": "Estimated SaaS affiliate revenue",
+"terms": [
+[
+0.0072,
+"published_pages",
+"monthly_visits_per_page"
+]
+]
+},
+{
+"name": "Hosting and API overhead",
+"fixed": 15,
+"terms": [
+[
+0.1,
+"published_pages"
+]
+]
+}
+]
+}
+]
